@@ -1,0 +1,54 @@
+<ui:composition template="/WEB-INF/template/layoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+  	xmlns:h="http://java.sun.com/jsf/html"
+  	xmlns:f="http://java.sun.com/jsf/core"  
+  	xmlns:ui="http://java.sun.com/jsf/facelets"
+  	xmlns:p="http://primefaces.org/ui">
+	  
+	<ui:define name="titulo">Cadastro | Produto</ui:define>
+	<ui:define name="corpo">
+	<h:form>
+		<h1>Novo Produto</h1>
+		<p:toolbar>
+			<p:toolbarGroup>
+				<p:button value="Novo" outcome="/produtos/cadastroProdutos"></p:button>
+				<p:commandButton value="Salvar" id="botaoSalvar"></p:commandButton>	
+			</p:toolbarGroup>
+			
+			<p:toolbarGroup align="right">
+				<p:button value="Pesquisa" outcome="/produtos/pesquisaProdutos"></p:button>
+			</p:toolbarGroup>
+		</p:toolbar>
+		
+		<p:panelGrid columns="2" id="panel" columnClasses="rotulo, campo">
+			<p:outputLabel value="Cod. Produto" for="idProduto"></p:outputLabel>
+			<p:inputText id="idProduto" size="20" maxlength="20"></p:inputText>
+			
+			<p:outputLabel value="Cod. Barra" for="codBarra"></p:outputLabel>
+			<p:inputText id="codBarra" size="20" maxlength="20"></p:inputText>
+			
+			<p:outputLabel value="Descrição" for="descricao"></p:outputLabel>
+			<p:inputText id="descricao" size="40" maxlength="60"></p:inputText>
+			
+			<p:outputLabel value="Cod. Grupo" for="codGrupo"></p:outputLabel>
+			<p:selectOneMenu id="codGrupo">
+				<f:selectItem itemLabel="Selecione o grupo" ></f:selectItem>	
+			</p:selectOneMenu>
+			
+			<p:outputLabel value="Data Fabricacao" for="dataFabricacao"></p:outputLabel>
+			<p:inputText id="dataFabricacao" size="10" maxlength="10"></p:inputText>
+			
+			<p:outputLabel value="Data Vencimento" for="dataVencimento"></p:outputLabel>
+			<p:inputText id="dataVencimento" size="10" maxlength="10"></p:inputText>
+			
+			<p:outputLabel value="Preço Custo" for="precoCusto"></p:outputLabel>
+			<p:inputText id="precoCusto" size="20" maxlength="20" styleClass="moeda"></p:inputText>
+			
+			<p:outputLabel value="Preço Venda" for="precoVenda" ></p:outputLabel>
+			<p:inputText id="precoVenda" size="20" maxlength="20" styleClass="moeda"></p:inputText>
+			
+		</p:panelGrid>
+	</h:form>	
+	</ui:define>  
+	  
+</ui:composition>

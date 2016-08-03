@@ -1,0 +1,76 @@
+<ui:composition template="/WEB-INF/template/layoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+  	xmlns:h="http://java.sun.com/jsf/html"
+  	xmlns:f="http://java.sun.com/jsf/core"  
+  	xmlns:ui="http://java.sun.com/jsf/facelets"
+  	xmlns:p="http://primefaces.org/ui">
+	  
+	<ui:define name="titulo">Pesquisa | Pedidos</ui:define>
+	<ui:define name="corpo">
+	<h:form>
+		<h1>Pesquisar Pedidos </h1>
+		<p:toolbar>
+			<p:toolbarGroup>
+				<p:button value="Pesquisa" outcome="/pedidos/pesquisaPedidos"></p:button>
+			</p:toolbarGroup>
+			<p:toolbarGroup align="right">
+				<p:button value="Novo" outcome="/pedidos/cadastroPedidos"></p:button>
+			</p:toolbarGroup>
+			
+		</p:toolbar>
+		
+		<p:panelGrid columns="4" id="panel" columnClasses="rotulo,campo,rotulo, campo">
+			
+			<p:outputLabel value="Cod. Pedido: " for="idPedido"></p:outputLabel>
+			<p:inputText id="idPedido" size="10" maxlength="10"></p:inputText>
+			<p:outputLabel value="Descrição" for="descricaoPedido"></p:outputLabel>
+			<p:inputText id="descricaoPedido" size="60" maxlength="60"></p:inputText>
+			
+			<p:outputLabel value="Data Inicial" for="dataInicial"></p:outputLabel>
+			<p:calendar id="dataInicial" size="10" pattern="dd/MM/yyyy"></p:calendar>
+			<p:outputLabel value="Data Final" for="dataFinal"></p:outputLabel>
+			<p:calendar id="dataFinal" size="10" pattern="dd/MM/yyyy"></p:calendar>
+			
+			<p:outputLabel value="Status"></p:outputLabel>
+			<p:selectManyCheckbox>
+				<f:selectItem itemLabel="Emitido" > </f:selectItem>
+				<f:selectItem itemLabel="Aprovado" > </f:selectItem>
+				<f:selectItem itemLabel="Cancelado" > </f:selectItem>
+			</p:selectManyCheckbox>
+			
+		</p:panelGrid>
+		
+		<p:dataTable id="pedidosTable" value="#{pesquisaPedidosBean.pedidosPesquisados}" var="pedidos" emptyMessage="Nenhum produto encontrados!" rows="20" paginator="true" paginatorAlwaysVisible="false" > 
+			<p:column headerText="Cod. Produto" style="text-align: centrer; width: 100px">
+				<h:outputText value="123"></h:outputText>
+			</p:column>
+			<p:column headerText="Cod. Barra" style="text-align: centrer; width: 100px">
+				<h:outputText value="123"></h:outputText>
+			</p:column>
+			<p:column headerText="Descrição" style="text-align: centrer; width: 100px">
+				<h:outputText value="123"></h:outputText>
+			</p:column>
+			<p:column headerText="Data Fabricação" style="text-align: centrer; width: 100px">
+				<h:outputText value="123"></h:outputText>
+			</p:column>
+			<p:column headerText="Data Vencimento" style="text-align: centrer; width: 100px">
+				<h:outputText value="123"></h:outputText>
+			</p:column>
+			<p:column headerText="Preço Custo" style="text-align: centrer; width: 100px">
+				<h:outputText value="123"></h:outputText>
+			</p:column>
+			<p:column headerText="Preço Venda" style="text-align: centrer; width: 100px">
+				<h:outputText value="123"></h:outputText>
+			</p:column>
+			<p:column headerText="Cod. Grupo" style="text-align: centrer; width: 100px">
+				<h:outputText value="123"></h:outputText>
+			</p:column>
+			<p:column headerText="Ações" style="text-align: centrer; width: 100px">
+				<p:button icon="ui-icon-pencil" title="Editar"></p:button>
+				<p:commandButton icon="ui-icon-trash" title="Excluir"></p:commandButton>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+	</ui:define>  
+	  
+</ui:composition>

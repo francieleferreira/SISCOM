@@ -1,0 +1,85 @@
+@CHARSET "utf-8";
+
+body {
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0 px;
+	font-weight: normal; 
+}
+header {
+	padding: 5px 0px;
+	margin-bottom: 20px;
+	height: 35px;
+	
+	background-color: white;	
+	color: black;
+	
+	box-shadow: 0px 4px 4px #ccc;
+}
+
+header > div {
+	margin-left: 8px;
+}
+
+#conteudo{
+	padding: 0px 8px;
+	margin-top: 40px;	
+}
+
+footer {
+	padding:  0px 8px;
+	margin-bottom: 10px;
+}
+
+#login-dialog {
+	width: 290px;
+	margin: auto;
+	margin-top: 150px;
+}
+
+.grid-login {
+	background-color: #008080;
+	border-radius: 8px;
+	border: 1px solid #008080;
+	margin-top: 8px;
+	padding: 10px;
+}
+
+.rotulo{
+	width: 100px;
+}
+.ui-panelgrid  {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.ui-panelgrid td{
+	height: 34px;
+}
+
+.ajax-status {
+	position: fixed;
+	top: 70px;
+	right:50px;
+	width: 15px;
+	height: 15px;
+}
+
+.ui-selectmanycheckbox td{
+	border-width:0px !important;
+	padding: 0px !important;
+}
+.ui-selectmanycheckbox td label {
+	padding-right:10px; 	
+}
+/* Customiza TabView*/
+.ui-tabs .ui-tabs-panel {padding: 0.5em 0.2em !important;}
+.ui-tabs {padding: 0px !important;}
+.ui-tabs .ui-tabs-nav {margin: -1px !important;}
+.ui-tabs.ui-tabs-top > .ui-tabs-nav {padding: 0px !important;}
+
+.menu-sistema {
+	border: 0px !important;
+	padding: 0px !important;
+	background: none !important;
+}

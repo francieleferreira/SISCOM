@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"  
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Perfil Cliente</title>
+		<h:outputStylesheet library="css" name="estilo.css"></h:outputStylesheet>
+	</h:head>
+	
+	<h:body>
+		<h:form id="form">
+			<p:tabView activeIndex="0" effect="fade" effectDuration="fast" dynamic="true" cache="true">
+				<p:tab title="Dados Pessoais" disabled="false" >
+					<p:panelGrid columns="2" id="panel1" cellpadding="4" columnClasses="rotulo, campo">
+						<p:outputLabel value="CPF" for="cpf"></p:outputLabel>
+						<p:inputText id="cpf" size="20" maxlength="20"></p:inputText>
+						
+						<p:outputLabel value="Nome" for="nome"></p:outputLabel>
+						<p:inputText id="nome" size="40" maxlength="60"></p:inputText>
+						
+						<p:outputLabel value="Telefone Residencial" for="telResidencial"></p:outputLabel>
+						<p:inputText id="telResidencial" size="10" maxlength="10"></p:inputText>
+						
+						<p:outputLabel value="Telefone Comercial" for="telComercial"></p:outputLabel>
+						<p:inputText id="telComercial" size="10" maxlength="10"></p:inputText>
+						
+						<p:outputLabel value="Telefone Celular" for="telCelular"></p:outputLabel>
+						<p:inputText id="telCelular" size="10" maxlength="10"></p:inputText>
+					</p:panelGrid>
+				</p:tab>
+				
+				<p:tab title="Endereco" disabled="false">
+					<p:panelGrid columns="2" id="panel2" cellpadding="4" columnClasses="rotulo, campo">
+						<p:outputLabel value="Logradouro" for="logradouro"></p:outputLabel>
+						<p:inputText id="logradouro" size="20" maxlength="20" ></p:inputText>
+						
+						<p:outputLabel value="Numero" for="numero" ></p:outputLabel>
+						<p:inputText id="numero" size="10" maxlength="10"></p:inputText>
+						
+						<p:outputLabel value="Bairro" for="bairro"></p:outputLabel>
+						<p:inputText id="bairro" size="20" maxlength="20" ></p:inputText>
+						
+						<p:outputLabel value="Cidade" for="cidade"></p:outputLabel>
+						<p:inputText id="cidade" size="20" maxlength="20" ></p:inputText>
+						
+						<p:outputLabel value="Estado" for="estado"></p:outputLabel>
+						<p:inputText id="estado" size="2" maxlength="2" ></p:inputText>
+					</p:panelGrid>
+				</p:tab>
+			
+			</p:tabView>
+		</h:form>
+		
+	</h:body>
+</html>

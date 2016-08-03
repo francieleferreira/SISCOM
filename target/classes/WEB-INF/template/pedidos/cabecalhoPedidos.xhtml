@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+  	xmlns:h="http://java.sun.com/jsf/html"
+  	xmlns:f="http://java.sun.com/jsf/core"  
+  	xmlns:ui="http://java.sun.com/jsf/facelets"
+  	xmlns:p="http://primefaces.org/ui">
+	  
+	<p:panelGrid columns="4" id="panel" columnClasses="rotulo, campo, rotulo, campo">
+			<p:outputLabel value="Cod. Pedido" for="idPedido"></p:outputLabel>
+			<h:outputText id="idPedido" size="20" maxlength="20"></h:outputText>
+			
+			<p:outputLabel value="Data Criação" for="dataCriacao"></p:outputLabel>
+			<h:outputText id="dataCriacao" size="10" maxlength="10"></h:outputText>
+			
+			<p:outputLabel value="Status" for="status"></p:outputLabel>
+			<h:outputText id="status" value="Orçamento" size="20" maxlength="20"></h:outputText>
+			
+			<p:outputLabel value="Vendedor" for="codVendedor"></p:outputLabel>
+			<p:selectOneMenu id="codVendedor">
+				<f:selectItem itemLabel="Selecione o vendedor" ></f:selectItem>	
+				<f:selectItem itemLabel="Vendedor1" ></f:selectItem>
+			</p:selectOneMenu>
+			
+			<p:outputLabel value="Cliente" for="codCliente"></p:outputLabel>
+			<p:autoComplete id="codCliente" size="40" dropdown="true"></p:autoComplete>
+			
+			
+			<p:outputLabel value="Forma de pagamento" for="formaPagamento"></p:outputLabel>
+			<p:selectOneMenu id="formaPagamento">
+				<f:selectItem itemLabel="Selecione a forma de pagamento" ></f:selectItem>	
+				<f:selectItem itemLabel="Dinheiro" ></f:selectItem>
+				<f:selectItem itemLabel="Cartão de Crédito" ></f:selectItem>
+			</p:selectOneMenu>
+			
+			<p:outputLabel value="Valor Frete" for="valorFrete"></p:outputLabel>
+			<p:inputText id="valorFrete" size="10" maxlength="10" styleClass="moeda"></p:inputText>
+			
+			<p:outputLabel value="Sub Total" for="subTotal" ></p:outputLabel>
+			<h:outputText id="subTotal" size="10" maxlength="20" value="R$ 0,00" style="font-weight:bold" styleClass="moeda"></h:outputText>
+			
+			<p:outputLabel value="Valor Desconto" for="valorDesconto"></p:outputLabel>
+			<p:inputText id="valorDesconto" size="10" maxlength="10" styleClass="moeda"></p:inputText>
+		
+			<p:outputLabel value="Total do Pedido" for="totalPedido" ></p:outputLabel>
+			<h:outputText id="totalPedido" size="10" maxlength="20" value="R$ 0,00" style="font-weight:bold; font-size:1.1em" styleClass="moeda"></h:outputText>
+		</p:panelGrid>
+	  
+</ui:composition>

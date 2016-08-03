@@ -1,0 +1,99 @@
+<ui:composition template="/WEB-INF/template/layoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+  	xmlns:h="http://java.sun.com/jsf/html"
+  	xmlns:f="http://java.sun.com/jsf/core"  
+  	xmlns:ui="http://java.sun.com/jsf/facelets"
+  	xmlns:p="http://primefaces.org/ui">
+	  
+	<ui:define name="titulo">Cadastro | Pedidos</ui:define>
+	<ui:define name="corpo">
+	<h:form>
+		<h1>Novo Pedido</h1>
+		<p:toolbar>
+			<p:toolbarGroup>
+				<p:button value="Novo" outcome="/pedidos/cadastroPedidos"></p:button>
+				<p:commandButton value="Salvar" id="botaoSalvar"></p:commandButton>	
+			</p:toolbarGroup>
+			
+			<p:toolbarGroup align="right">
+				<p:commandButton value="Emitir" id="botaoEmitir"></p:commandButton>
+				<p:commandButton value="Cancelar" id="botaoCancelar"></p:commandButton>
+				<p:commandButton value="Enviar por e-mail" id="botaoEnviarEmail"></p:commandButton>
+				
+				<p:separator/>
+				
+				<p:button value="Pesquisa" outcome="/pedidos/pesquisaPedidos"></p:button>
+			</p:toolbarGroup>
+		</p:toolbar>
+		
+		<ui:include src="/WEB-INF/template/pedidos/cabecalhoPedidos.xhtml"></ui:include>
+		
+		<p:tabView style="margin-top:20px" >
+			<p:tab title="Itens">
+				<p:dataTable value="#{cadastroPedidosBean.itens}" var="item" id="tabelaItensPedido">
+					<p:column headerText="Cod. Pedido" style="text-align:center; width:100px">
+						<p:inputText size="8"></p:inputText>
+					</p:column>
+					<p:column headerText="Produto">
+						<p:autoComplete></p:autoComplete>
+					</p:column>
+					<p:column headerText="Valor Unitário" style="text-align:right; width:100px">
+						<h:outputText value="R$ 0,00"></h:outputText>	
+					</p:column>
+					<p:column headerText="Quantidade" style="text-align:center; width:100px">
+						<p:inputText size="8" value="1"></p:inputText>
+					</p:column>
+					<p:column headerText="Estoque" style="text-align:center; width:100px">
+						<h:outputText value="0"></h:outputText>	
+					</p:column>
+					<p:column headerText="Valor Total" style="text-align:center; width:100px">
+						<h:outputText value="R$ 0,00"></h:outputText>	
+					</p:column>
+					
+					<p:columnGroup type="footer">
+						<p:row>
+							<p:column colspan="5" footerText="Sub Total" style="text-align:right"></p:column>
+							<p:column  footerText="R$ 0,00" style="text-align:right"></p:column>
+						</p:row>
+					</p:columnGroup>
+					
+				</p:dataTable>			
+			</p:tab>
+			<p:tab title="Dados de Entrega">
+			<p:panelGrid columns="4" id="panel" columnClasses="rotulo, campo, rotulo, campo">
+				<p:outputLabel value="Data Entrega" for="dataEntrega"></p:outputLabel>
+				<p:calendar id="dataEntrega" size="10" pattern="dd/MM/yyyy"></p:calendar>
+				
+				<p:spacer></p:spacer>
+				<p:spacer></p:spacer>
+				
+				<p:outputLabel value="Logradouro" for="entregaLogradouro"></p:outputLabel>
+				<p:inputText id="entregaLogradouro" size="10" maxlength="10"></p:inputText>
+				
+				<p:outputLabel value="Numero" for="entregaNumero"></p:outputLabel>
+				<p:inputText id="entregaNumero" size="5" maxlength="5"></p:inputText>
+				
+				<p:outputLabel value="Complemento" for="entregaComplemento"></p:outputLabel>
+				<p:inputText id="entregaComplemento" size="50" maxlength="50"></p:inputText>
+				
+				<p:outputLabel value="Cidade" for="entregaCidade"></p:outputLabel>
+				<p:inputText id="entregaCidade" size="20" maxlength="20"></p:inputText>
+				
+				<p:outputLabel value="Estado" for="entregaEstado"></p:outputLabel>
+				<p:inputText id="entregaEstado" size="20" maxlength="20"></p:inputText>
+				
+				<p:outputLabel value="CEP" for="entregaCEP"></p:outputLabel>
+				<p:inputText id="entregaCEP" size="10" maxlength="10"></p:inputText>
+			
+			</p:panelGrid>
+			</p:tab>
+			<p:tab title="Observação">
+			<h:panelGroup layout="block" style="padding-right: 10px">
+				<p:inputTextarea rows="10" style="width: 100%"></p:inputTextarea>
+			</h:panelGroup>
+			</p:tab>
+		</p:tabView>
+	</h:form>	
+	</ui:define>  
+	  
+</ui:composition>
